@@ -6,7 +6,17 @@
 <ul>
     <li>Nivel: {{ trainer.level }}</li>
     <li>Fecha de nacimiento: {{ trainer.birth_date }}</li>
-    
 </ul>
+
+
+{% if trainer.picture %}
+<div class="text-center mt-3">
+    <img src="{{ trainer.picture.url }}" class="img-fluid rounded" style="max-width: 300px;" alt="Foto de {{ trainer.first_name }}">
+</div>
+{% endif %}
+
+<br>
+<a href="{% url 'pokedex:index' %}" class="btn btn-secondary">Regresar</a>
+
 {% endblock content %}
         
